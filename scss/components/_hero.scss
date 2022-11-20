@@ -1,0 +1,42 @@
+@import '../partails/mixins'; 
+@import '../partails/custom';
+.Hero{
+   
+    position: relative;
+    color: var(--c-blanco); 
+
+    &-Video{ 
+        //background-color: gold;
+        min-height: 50vh;
+        max-height: 70vh; 
+    } 
+
+    &-info{
+        width: 100%; 
+ 
+        position: absolute;
+        top: 40%; 
+        @include flex(column, nowrap, center, center); 
+    }
+    &-h1{}
+    &-titulo{
+        font-size: 2em; 
+        
+    } 
+
+    &-reservar{ 
+        background-color: var(--c-rojo); 
+        display: flex; 
+        padding: 1em 2em;  
+        max-width: 18.75rem;
+        @include flex(row,nowrap,center,center); 
+        border-radius: 3.125rem;
+        font-weight: 600; 
+        transition: all .5s ease; 
+        &:hover{
+            background-color: var(--c-blanco);
+            color: var(--c-negro);
+        }
+        
+    }
+}

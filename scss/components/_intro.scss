@@ -1,0 +1,87 @@
+@import '../partails/mixins';
+@import '../partails/custom'; 
+
+.Intro{
+    background-color: red; 
+    .Wrapper{
+        background-color: lime;
+    }
+    &-images{
+        position: relative; 
+        overflow: hidden; 
+    }
+
+    &-img{
+        width: 100%;   
+        position: absolute;
+        object-fit: initial;  
+        
+
+        &:first-child{
+            position: static;
+        } 
+        &.bg{
+            object-fit: contain;
+        } 
+
+        &.boy{
+            width: 50%; 
+            top: 25%;    
+            right: -12%;  
+            z-index: 9;    
+
+        }
+
+        &.freya{
+            width: 70%;      
+            top: -2%;      
+            left: 48%;      
+             
+            z-index: 8;       
+        } 
+
+        &.kratos{
+            width: 35%;    
+            top: 15%;   
+            left: 25%;    
+            z-index: 6; 
+        }
+
+        &.trineo{
+            width: 100% ; 
+            left: 15%;     
+            bottom: -5%;       
+            transform: scale(1.4);    
+            z-index: 10; 
+        }
+
+        &.polvo{ 
+            width: 100%;  
+            bottom: -40%; 
+            z-index: 9;  
+
+        }
+
+        &.ruido{
+            width: 100%; 
+            bottom: 0; 
+            left: 0; 
+            z-index: 10;
+        }
+
+
+    }
+
+    &-section{
+
+    }
+
+    &-h3{
+
+    }
+
+    &-p{
+
+    }
+
+}

@@ -1,0 +1,16 @@
+@use 'partails/_reset';
+
+@use './components/_header';
+
+@use './components/_hero';
+
+@use './components/_slider';
+
+@use './components/_intro';
+
+
+.Wrapper{
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+}
