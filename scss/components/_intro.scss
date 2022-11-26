@@ -2,17 +2,70 @@
 @import '../partails/custom'; 
 
 .Intro{
-    background-color: red; 
+    background: url(../image/section2a-background-interactive-mobile.jpg) center center / cover  ;  
+    position: relative; 
+    &::after{
+        content: '';
+        display: block;
+        background: rgb(29,29,29);
+        background: linear-gradient(270deg, rgba(29,29,29,0.014746671597633099) 0%, rgba(29,29,29,1) 100%, rgba(29,29,29,1) 100%); 
+        width: 40%;
+        height: 100%;
+        position: absolute; 
+        top: 0;
+        left: 0; 
+        z-index: 11;
+        @include media(1024px){ 
+            width: 100%;
+            height: 30%;   
+            top: 50%;   
+            background: rgb(0,0,0);
+            background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 97%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+        }  
+           
+          
+         
+    } 
     .Wrapper{
-        background-color: lime;
-    }
+        position: absolute; 
+        top: 30% ;  
+        left: 5%;   
+        z-index: 11; 
+        width: 40%;    
+        height: 50%;  
+        color: white;
+        z-index: 12; 
+
+        text-shadow: 0 0 1em black; 
+
+        @include media(1024px){ 
+            width: 100%;
+            position: relative;
+            background-color: black;  
+            left: 0; 
+           
+        }
+        
+    }  
     &-images{
-        position: relative; 
-        overflow: hidden; 
+        position: relative;  
+        pointer-events: none;
+        overflow: hidden;  
+       
+         
+        @include media(1024px){ 
+            width: 145%;   
+            right: 45%;
+                  
+            
+        }
+
+        
     }
 
-    &-img{
-        width: 100%;   
+    &-img{ 
+        width: 100%; 
+        
         position: absolute;
         object-fit: initial;  
         
@@ -21,44 +74,65 @@
             position: static;
         } 
         &.bg{
-            object-fit: contain;
+             opacity: 0; 
         } 
 
         &.boy{
-            width: 50%; 
-            top: 25%;    
-            right: -12%;  
-            z-index: 9;    
+            width: 45%;  
+            top: 18%;    
+            right: -11%;    
+            z-index: 9;     
 
         }
 
-        &.freya{
-            width: 70%;      
-            top: -2%;      
-            left: 48%;      
-             
+        &.freya{ 
+            width: 72%;       
+            top: -15%;            
+            left: 66%;        
+               
             z-index: 8;       
         } 
 
         &.kratos{
-            width: 35%;    
-            top: 15%;   
-            left: 25%;    
+            width: 33%;      
+            top: 17%;     
+            left: 25%;       
             z-index: 6; 
         }
 
         &.trineo{
             width: 100% ; 
-            left: 15%;     
-            bottom: -5%;       
+            left: 20%;        
+            bottom: -5%;         
             transform: scale(1.4);    
             z-index: 10; 
         }
 
-        &.polvo{ 
+        &.polvo1{  
             width: 100%;  
             bottom: -40%; 
-            z-index: 9;  
+            z-index: 9; 
+            
+
+        } 
+        &.polvo2{  
+            width: 100%;  
+            top: -25%;  
+            z-index: 1;  
+            left: 50%;   
+ 
+        }
+        &.polvo3{  
+            width: 100%;   
+            top: -10%; 
+            left: 50%;   
+            z-index: 1; 
+            
+            @include media(1024px){  
+                z-index: 10;
+                left: 30%;   
+                top: 45%;       
+            }  
 
         }
 
@@ -66,22 +140,48 @@
             width: 100%; 
             bottom: 0; 
             left: 0; 
-            z-index: 10;
+            z-index: 10; 
+            @include media(1024px){ 
+                display: none;  
+            }
         }
-
+        &.snow1{ 
+            width: 100%;  
+            top: 0%;     
+            z-index: 10; 
+        }  
+        &.snow2{ 
+            width: 100%;  
+            top: 0%;    
+            z-index: 10; 
+        } 
 
     }
 
-    &-section{
-
-    }
+    &-section{ 
+           
+          
+    } 
 
     &-h3{
-
+        font-size: 2.4em; 
+        margin: 0 0 1em;
+        @include media(1024px){ 
+            width: 70%;  
+            margin: auto;  
+            left: 0;  
+        }
     }
 
     &-p{
-
+        text-align: 1.5em; 
+        @include media(1024px){ 
+            width: 70%;   
+            margin: auto;
+            padding-bottom: 4rem;      
+            left: 0;
+            border-bottom: .125rem solid white;    
+        }
     }
 
 }

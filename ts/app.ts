@@ -55,11 +55,91 @@
             sliderMoveValue() 
         })
     }) 
-    sliderArrow[1].addEventListener('pointerdown', sliderNext)
-    sliderArrow[0].addEventListener('pointerdown', sliderPrev)
-     
-    
+    sliderArrow[1].addEventListener('pointerdown', sliderNext);
+    sliderArrow[0].addEventListener('pointerdown', sliderPrev);
+
+
+
+    const introDiv = (document.querySelector('.Intro') as HTMLDivElement);
+    const bg = (document.querySelector('.bg') as HTMLImageElement);
+    const boy = (document.querySelector('.boy') as HTMLImageElement); 
+    const freya = (document.querySelector('.freya') as HTMLImageElement);
+    const kratos = (document.querySelector('.kratos') as HTMLImageElement);
+    const trineo = (document.querySelector('.trineo') as HTMLImageElement);
+    const polvo1 = (document.querySelector('.polvo1') as HTMLImageElement);
+    const polvo2 = (document.querySelector('.polvo2') as HTMLImageElement);
+    const polvo3 = (document.querySelector('.polvo3') as HTMLImageElement);
+    const ruido = (document.querySelector('.ruido') as HTMLImageElement);
+    const snow1 = (document.querySelector('.snow1') as HTMLImageElement);
+    const snow2 = (document.querySelector('.snow2') as HTMLImageElement);
+
+
+    let efectoScrollFreya = ( elemento , velocidad ) =>{
+
+        window.addEventListener('scroll', ( e )=>{
+
+            let {scrollY, innerHeight}= window;
+            let {offsetTop} = introDiv;
+            let {height} = introDiv.getBoundingClientRect();
+            let operacion = offsetTop - innerHeight - 1.5; 
+            let valorTransform = ((scrollY - operacion) / velocidad) / 10;  
+             
+            
+            let tipoTransform = `translateX(-${valorTransform}%) translateY(${valorTransform}%)`;
+            elemento.style.transform = (scrollY >= operacion)  
+            ? tipoTransform     
+            :  `translate(0px)`     
+        } ); 
+          
+    }
+    let efectoScrollBoy = ( elemento , velocidad ) =>{
+
+        window.addEventListener('scroll', ( e )=>{
+
+            let {scrollY, innerHeight}= window;
+            let {offsetTop} = introDiv;
+            let operacion = offsetTop - innerHeight - 1.5; 
+            let valorTransform = ((scrollY - operacion) / velocidad) / 10;   
+             
+
+            let tipoTransform = `translateX(-${valorTransform}%) translateY(${valorTransform}%) rotate(-${valorTransform /2}deg) `
  
+            elemento.style.transform = (scrollY >= operacion)  
+            ? tipoTransform  
+            :  `translate(0px)`        
+        } ); 
+          
+    }
+    let efectoScrollKratos = ( elemento , velocidad ) =>{
+
+        window.addEventListener('scroll', ( e )=>{
+
+            let {scrollY, innerHeight}= window;
+            let {offsetTop} = introDiv;
+            let operacion = offsetTop - innerHeight - 1.5; 
+            let valorTransform = ((scrollY - operacion) / velocidad) / 10;  
+               
+
+            let tipoTransform = `translate(${valorTransform}%)` 
+ 
+            elemento.style.transform = (scrollY >= operacion)  
+            ? tipoTransform  
+            :  `translate(0px)`          
+        } ); 
+          
+    }
+
+    efectoScrollFreya(freya , 4);  
+    efectoScrollBoy(boy , 7); 
+    efectoScrollKratos(kratos , 7);  
+
+    
+
+
+
+
+
+
 
 })()
     
