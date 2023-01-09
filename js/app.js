@@ -60,7 +60,7 @@
     var snow2 = document.querySelector('.snow2');
     var efectoScrollFreya = function (elemento, velocidad) {
         window.addEventListener('scroll', function (e) {
-            var scrollY = window.scrollY, innerHeight = window.innerHeight;
+            var scrollY = window.scrollY, innerHeight = window.innerHeight, innerWidth = window.innerWidth;
             var offsetTop = introDiv.offsetTop;
             var height = introDiv.getBoundingClientRect().height;
             var operacion = offsetTop - innerHeight - 1.5;

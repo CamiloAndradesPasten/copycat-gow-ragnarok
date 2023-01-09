@@ -78,7 +78,7 @@
 
         window.addEventListener('scroll', ( e )=>{
 
-            let {scrollY, innerHeight}= window;
+            let {scrollY, innerHeight, innerWidth}= window;
             let {offsetTop} = introDiv;
             let {height} = introDiv.getBoundingClientRect();
             let operacion = offsetTop - innerHeight - 1.5; 
@@ -88,10 +88,11 @@
             let tipoTransform = `translateX(-${valorTransform}%) translateY(${valorTransform}%)`;
             elemento.style.transform = (scrollY >= operacion)  
             ? tipoTransform     
-            :  `translate(0px)`     
-        } ); 
+            :  `translate(0px)`    
+                
+        } );  
           
-    }
+    } 
     let efectoScrollBoy = ( elemento , velocidad ) =>{
 
         window.addEventListener('scroll', ( e )=>{
@@ -111,7 +112,7 @@
           
     }
     let efectoScrollKratos = ( elemento , velocidad ) =>{
-
+ 
         window.addEventListener('scroll', ( e )=>{
 
             let {scrollY, innerHeight}= window;
@@ -130,10 +131,10 @@
     }
 
     efectoScrollFreya(freya , 4);  
-    efectoScrollBoy(boy , 7); 
+    efectoScrollBoy(boy , 7);  
     efectoScrollKratos(kratos , 7);  
 
-    
+     
 
 
 
